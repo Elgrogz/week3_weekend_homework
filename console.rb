@@ -26,15 +26,21 @@ film1.save
 film2.save
 film3.save
 
-ticket1 = Ticket.new({'customer_id' => 1, 'film_id' => 1})
-ticket2 = Ticket.new({'customer_id' => 2, 'film_id' => 1})
-ticket3 = Ticket.new({'customer_id' => 3, 'film_id' => 2})
-ticket4 = Ticket.new({'customer_id' => 4, 'film_id' => 2})
-ticket5 = Ticket.new({'customer_id' => 5, 'film_id' => 3})
-ticket6 = Ticket.new({'customer_id' => 6, 'film_id' => 3})
-ticket7 = Ticket.new({'customer_id' => 1, 'film_id' => 2})
-ticket8 = Ticket.new({'customer_id' => 2, 'film_id' => 3})
-ticket9 = Ticket.new({'customer_id' => 1, 'film_id' => 3})
+ticket1 = Ticket.new({'customer_id' => 1, 'film_id' => 1, 'film_time' => 1800})
+ticket2 = Ticket.new({'customer_id' => 2, 'film_id' => 1, 'film_time' => 1800})
+ticket3 = Ticket.new({'customer_id' => 3, 'film_id' => 2, 'film_time' => 1800})
+ticket4 = Ticket.new({'customer_id' => 4, 'film_id' => 2, 'film_time' => 1800})
+ticket5 = Ticket.new({'customer_id' => 5, 'film_id' => 3, 'film_time' => 2100})
+ticket6 = Ticket.new({'customer_id' => 6, 'film_id' => 3, 'film_time' => 2100})
+ticket7 = Ticket.new({'customer_id' => 1, 'film_id' => 2, 'film_time' => 2100})
+ticket8 = Ticket.new({'customer_id' => 2, 'film_id' => 3, 'film_time' => 2100})
+ticket9 = Ticket.new({'customer_id' => 1, 'film_id' => 3, 'film_time' => 2200})
+ticket10 = Ticket.new({'customer_id' => 2, 'film_id' => 1, 'film_time' => 2200})
+ticket11 = Ticket.new({'customer_id' => 3, 'film_id' => 3, 'film_time' => 2200})
+ticket12 = Ticket.new({'customer_id' => 4, 'film_id' => 3, 'film_time' => 2200})
+ticket13 = Ticket.new({'customer_id' => 5, 'film_id' => 2, 'film_time' => 1900})
+ticket14 = Ticket.new({'customer_id' => 6, 'film_id' => 1, 'film_time' => 2000})
+ticket15 = Ticket.new({'customer_id' => 1, 'film_id' => 3, 'film_time' => 2030})
 
 
 ticket1.save
@@ -46,6 +52,12 @@ ticket6.save
 ticket7.save
 ticket8.save
 ticket9.save
+ticket10.save
+ticket11.save
+ticket12.save
+ticket13.save
+ticket14.save
+ticket15.save
 
 customer1.name = 'Jimmy Jojo'
 customer1.update

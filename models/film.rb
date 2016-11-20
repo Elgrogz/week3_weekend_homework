@@ -52,7 +52,7 @@ class Film
 
   def self.get_many(sql)
     films = SqlRunner.run(sql)
-    result = films.map { |film| Film.new(film) }
+    result = films.map {|film| Film.new(film)}
     return result
   end
 
@@ -62,6 +62,18 @@ class Film
           ON c.id = t.customer_id
           WHERE t.film_id = #{@id}"
     return Customer.get_many(sql).count
+  end
+
+  def most_popular_time
+    sql = "SELECT t.* FROM tickets t
+          INNER JOIN films f
+          ON f.id = t.film_id
+          WHERE t.film_id = #{@id};"
+    tickets = Ticket.get_many(sql)
+    results = tickets.map{|ticket| ticket.film_time}
+    counts = Hash.new(0)
+    results.each { |time| counts[time] += 1}
+    return results.max_by {|time| counts[time]}
   end
   
 end

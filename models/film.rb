@@ -64,15 +64,17 @@ class Film
     return Customer.get_many(sql).count
   end
 
+  #only returns one time even if there are two film_times with equal number of punters. not sure how i would make it that it returns all of them
+
   def most_popular_time
     sql = "SELECT t.* FROM tickets t
           INNER JOIN films f
           ON f.id = t.film_id
           WHERE t.film_id = #{@id};"
     tickets = Ticket.get_many(sql)
-    results = tickets.map{|ticket| ticket.film_time}
+    film_times = tickets.map{|ticket| ticket.film_time}
     counts = Hash.new(0)
-    results.each { |time| counts[time] += 1}
+    film_times.each { |time| counts[time] += 1}
     return results.max_by {|time| counts[time]}
   end
   
